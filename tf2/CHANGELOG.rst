@@ -2,6 +2,29 @@
 Changelog for package tf2
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.5 (2020-09-01)
+------------------
+* restore buffer sizes
+* Contributors: Tully Foote
+
+0.7.4 (2020-09-01)
+------------------
+* Fix potential buffer overrun of snprintf (`#479 <https://github.com/ros/geometry2/issues/479>`_)
+* Contributors: Atsushi Watanabe
+
+0.7.3 (2020-08-25)
+------------------
+* Use snprintf instead of stringstream to increase performance of lookupTransform() in error cases.
+* Do not waste time constructing error string if nobody is interested in it in canTransform(). (`#469 <https://github.com/ros/geometry2/issues/469>`_)
+* Output time difference of extrapolation exceptions (`#477 <https://github.com/ros/geometry2/issues/477>`_)
+* Cherry-picking various commits from Melodic (`#471 <https://github.com/ros/geometry2/issues/471>`_)
+  * Revert "rework Eigen functions namespace hack" (`#436 <https://github.com/ros/geometry2/issues/436>`_)
+  * Fixed warnings in message_filter.h (`#434 <https://github.com/ros/geometry2/issues/434>`_)
+  the variables are not used in function body and caused -Wunused-parameter to trigger with -Wall
+  * Fix ambiguous call for tf2::convert on MSVC (`#444 <https://github.com/ros/geometry2/issues/444>`_)
+  * rework ambiguous call on MSVC.
+* Contributors: Lucas Walter, Martin Pecka, Robert Haschke
+
 0.7.2 (2020-06-08)
 ------------------
 
